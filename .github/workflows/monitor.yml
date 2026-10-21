@@ -1,0 +1,18 @@
+name: Production Monitor
+on:
+  schedule:
+    - cron: '0 * * * *'
+  workflow_dispatch:
+
+jobs:
+  monitor-api:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - name: Cài Newman
+        run: npm install -g newman
+      - name: Chạy monitor
+        run: newman run Monitor.json
