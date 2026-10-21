@@ -1,0 +1,15 @@
+name: GoRest API Test
+on: push
+
+jobs:
+  api-testing:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - name: Cài Newman
+        run: npm install -g newman
+      - name: Chạy bộ test
+        run: newman run Collection.json -e Environment.json -d users.csv --env-var "token=680b9ea805f8c03fbd5a19e857c2b549030a0929b2682b52422fd33aeaa061fb"
