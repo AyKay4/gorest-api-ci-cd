@@ -12,7 +12,7 @@
       "name": "Positive_Cases",
       "item": [
         {
-          "name": "Request 1",
+          "name": "Create User",
           "event": [
             {
               "listen": "test",
@@ -61,7 +61,7 @@
           "response": []
         },
         {
-          "name": "Request 2",
+          "name": "Get User",
           "event": [
             {
               "listen": "test",
@@ -102,7 +102,7 @@
           "response": []
         },
         {
-          "name": "Request 3",
+          "name": "Update User Status",
           "event": [
             {
               "listen": "test",
@@ -114,7 +114,7 @@
                   "pm.test(\"Status đã đổi thành inactive\", function () {\r",
                   "    pm.expect(pm.response.json().status).to.eql(\"inactive\");\r",
                   "});\r",
-                  "postman.setNextRequest(\"Request 5\");"
+                  "postman.setNextRequest(\"Create User Khg co Token\");"
                 ],
                 "type": "text/javascript",
                 "packages": {},
@@ -153,7 +153,7 @@
           "response": []
         },
         {
-          "name": "Request 4",
+          "name": "Delete User",
           "event": [
             {
               "listen": "test",
@@ -162,7 +162,7 @@
                   "pm.test(\"Xóa thành công (204)\", function () {\r",
                   "    pm.response.to.have.status(204);\r",
                   "});\r",
-                  "postman.setNextRequest(\"Request 7\");"
+                  "postman.setNextRequest(\"Get User sau khi Del\");"
                 ],
                 "type": "text/javascript",
                 "packages": {},
@@ -197,7 +197,7 @@
       "name": "Negative_Cases",
       "item": [
         {
-          "name": "Request 5",
+          "name": "Create User Khg co Token",
           "event": [
             {
               "listen": "test",
@@ -246,7 +246,7 @@
           "response": []
         },
         {
-          "name": "Request 6",
+          "name": "Create User trung Email",
           "event": [
             {
               "listen": "test",
@@ -255,7 +255,7 @@
                   "pm.test(\"Trùng email bị từ chối (422)\", function () {\r",
                   "    pm.response.to.have.status(422);\r",
                   "});\r",
-                  "postman.setNextRequest(\"Request 4\");"
+                  "postman.setNextRequest(\"Delete User\");"
                 ],
                 "type": "text/javascript",
                 "packages": {},
@@ -293,7 +293,7 @@
           "response": []
         },
         {
-          "name": "Request 7",
+          "name": "Get User sau khi Del",
           "event": [
             {
               "listen": "test",
